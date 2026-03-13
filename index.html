@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAPZ KEUANGAN</title>
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#f2f2f2;
+}
+
+h1{
+color:blue;
+}
+
+input{
+padding:10px;
+margin:5px;
+}
+
+button{
+padding:10px;
+background:blue;
+color:white;
+border:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>DAPZ KEUANGAN</h1>
+
+<h3>Pemasukan Uang</h3>
+
+<input id="ket" placeholder="keterangan">
+<input id="jumlah" type="number" placeholder="jumlah uang">
+
+<button onclick="tambah()">Tambah</button>
+
+<h3>Daftar Pemasukan</h3>
+
+<ul id="list"></ul>
+
+<script>
+
+let data=[]
+
+function tambah(){
+
+let ket=document.getElementById("ket").value
+let jumlah=document.getElementById("jumlah").value
+
+data.push({ket,jumlah})
+
+tampil()
+
+}
+
+function tampil(){
+
+let list=document.getElementById("list")
+list.innerHTML=""
+
+data.forEach(d=>{
+list.innerHTML+=`<li>${d.ket} : Rp ${d.jumlah}</li>`
+})
+
+}
+
+</script>
+
+</body>
+</html>
